@@ -14,24 +14,22 @@
 
 <%= form_for @message, html: {class: 'form-horizontal'} do |f| %>
   <div class="form-group">
-    <label for="message_name" class="col-md-2 control-label">名前:</label>
-    <div class="col-md-4">
-        <%= f.text_field :name, class: "form-control" %>
-    </div>  
+    <label for="InputName" class="col-sm-2 control-label text-right">名前</label>
+    <div class="col-sm-10">
+      <%= f.text_field :name, id: "InputName", class: "form-control form_naco", placeholder: "name" %>
+    </div>
   </div>
-
- <div class="form-group">    
-    <label for="message_body" class="col-md-2 control-labe1">内容:</label>
-    <div class="col-md-8">
-    <%= f.text_area :body, class: "form-control" %>
- </div>    
 
   <div class="form-group">
-    <div class="col-md-2">
-      <%= f.submit class: "btn btn-primary btn-block form-control" %>  
+    <label for="InputComment" class="col-sm-2 control-label text-right">内容</label>
+    <div class="col-sm-10">
+      <%= f.text_area :body, id: "InputComment", class: "form-control form_naco", cols: 10, rows: 5, placeholder: "comment"%>
     </div>
-    </div>
-        <div class="col-md-4"></div>
   </div>
-  
+
+  <div class="form-group sub_btn">
+    <div class="col-sm-offset-6 col-sm-6">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
